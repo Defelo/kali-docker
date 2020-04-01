@@ -6,6 +6,7 @@ RUN apt install -y sudo bash-completion 'ttf-*' xfce4-terminal
 RUN apt install -y curl net-tools neovim
 RUN DEBIAN_FRONTEND=noninteractive apt install -y kali-linux-default
 RUN apt install -y iputils-ping gobuster
+RUN apt install -y redshift redshift-gtk
 
 RUN echo "[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion" >> /etc/bash.bashrc
 RUN sed -i 's/--no-generate //' /usr/share/bash-completion/completions/apt
@@ -20,5 +21,7 @@ USER kali
 RUN mkdir -p /home/kali/.config/xfce4 && echo TerminalEmulator=xfce4-terminal > /home/kali/.config/xfce4/helpers.rc
 ADD --chown=1000:1001 init.vim /home/kali/.config/nvim/
 ADD --chown=1000:1001 xfce4-panel.xml /home/kali/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+ADD --chown=1000:1001 redshift.conf /home/kali/.config/redshift/redshift.conf
+ADD --chown=1000:1001 redshift-gtk.desktop /home/kali/.config/autostart/redshift-gtk.desktop
 
 CMD startxfce4
