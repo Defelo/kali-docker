@@ -5,7 +5,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt install -y kali-desktop-xfce
 RUN apt install -y sudo bash-completion 'ttf-*' xfce4-terminal
 RUN apt install -y curl net-tools neovim
 RUN DEBIAN_FRONTEND=noninteractive apt install -y kali-linux-default
-RUN apt install -y iputils-ping
+RUN apt install -y iputils-ping gobuster
 
 RUN echo "[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion" >> /etc/bash.bashrc
 RUN sed -i 's/--no-generate //' /usr/share/bash-completion/completions/apt
