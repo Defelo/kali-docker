@@ -32,11 +32,9 @@ docker run \
     -e DISPLAY=:$DISPLAY \
     -v /tmp/.X11-unix/X$DISPLAY:/tmp/.X11-unix/X$DISPLAY:rw \
     --rm \
-    -v /dev:/dev \
     -v /etc/localtime:/etc/localtime:ro \
     -v /home/felix/CTF:/home/kali/CTF \
-    --net=host \
-    --ipc=host \
+    --sysctl net.ipv6.conf.all.disable_ipv6=0 \
     --privileged \
     defelo/kali
 
