@@ -5,7 +5,27 @@
 LAST_DISPLAY=$(ls /tmp/.X11-unix/ | sort | tail -n 1 | tail -c +2 | head -c -1)
 DISP=$((LAST_DISPLAY+1))
 
-Xephyr -keybd ephyr,,,xkbmodel=pc105,xkblayout=de,xkbrules=evdev,xkboption=grp:alts_toogle -ac -br -fullscreen :$DISP &
+Xephyr \
+    -keybd ephyr,,,xkbmodel=pc105,xkblayout=de,xkbrules=evdev,xkboption=grp:alts_toogle \
+    -ac \
+    -br \
+    -resizeable \
+    -title Kali \
+    -dpms -s off \
+    +extension RANDR \
+    +extension RENDER \
+    +extension GLX \
+    +extension XVideo \
+    +extension DOUBLE-BUFFER \
+    +extension SECURITY \
+    +extension DAMAGE \
+    -extension X-Resource \
+    -extension XINERAMA -xinerama \
+    -extension MIT-SHM \
+    -nolisten tcp \
+    +extension Composite +extension COMPOSITE \
+    -dpi 96 \
+    :$DISP &
 pid=$!
 
 sleep 1
