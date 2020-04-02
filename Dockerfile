@@ -21,7 +21,5 @@ USER kali
 RUN mkdir -p /home/kali/.config/xfce4 && echo TerminalEmulator=xfce4-terminal > /home/kali/.config/xfce4/helpers.rc
 ADD --chown=1000:1001 init.vim /home/kali/.config/nvim/
 ADD --chown=1000:1001 xfce4-panel.xml /home/kali/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
-ADD --chown=1000:1001 redshift.conf /home/kali/.config/redshift/redshift.conf
-ADD --chown=1000:1001 redshift-gtk.desktop /home/kali/.config/autostart/redshift-gtk.desktop
 
 CMD startxfce4
