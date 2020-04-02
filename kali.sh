@@ -5,7 +5,7 @@
 LAST_DISPLAY=$(ls /tmp/.X11-unix/ | sort | tail -n 1 | tail -c +2 | head -c -1)
 DISP=$((LAST_DISPLAY+1))
 
-Xephyr -ac -br -fullscreen :$DISP &
+Xephyr -keybd ephyr,,,xkbmodel=pc105,xkblayout=de,xkbrules=evdev,xkboption=grp:alts_toogle -ac -br -fullscreen :$DISP &
 pid=$!
 
 sleep 1
