@@ -30,6 +30,9 @@ pid=$!
 
 sleep 1
 
+./clipsync.sh $DISPLAY :$DISP &
+clippid=$!
+
 docker run \
     --name kali \
     --hostname kali \
@@ -42,4 +45,5 @@ docker run \
     --privileged \
     defelo/kali:xephyr
 
+kill $clippid
 kill $pid
