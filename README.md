@@ -1,4 +1,4 @@
-# kali-docker ![Docker Image](https://github.com/Defelo/kali-docker/workflows/Docker%20Image/badge.svg)
+# kali-docker [![DockerHub](https://img.shields.io/docker/pulls/defelo/kali?style=flat-square&label=DockerHub)](https://hub.docker.com/r/defelo/kali)
 
 Dockerized Kali Linux with Xfce4
 
