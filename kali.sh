@@ -43,7 +43,7 @@ docker run \
     -v /home/felix/CTF:/home/kali/CTF \
     --sysctl net.ipv6.conf.all.disable_ipv6=0 \
     --privileged \
-    defelo/kali:xephyr
+    defelo/kali
 
 #kill $clippid
 kill $pid
