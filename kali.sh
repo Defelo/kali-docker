@@ -36,6 +36,7 @@ sleep 1
 docker run \
     --name kali \
     --hostname kali \
+    --shm-size 2g \
     -e DISPLAY=:$DISP \
     -v /tmp/.X11-unix/X$DISP:/tmp/.X11-unix/X$DISP:rw \
     --rm \
